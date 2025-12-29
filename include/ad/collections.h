@@ -29,7 +29,7 @@ bool ad_vector_reserve(void** header, usize elem_size, usize additional);
 #define vector_last_ref(v) (vector_len(v) > 0 ? &v[vector_len(v) - 1] : nullptr)
 #define vector_at_ref(v, i) ((i) < vector_len(v) ? &v[i] : nullptr)
 
-#define vector_reserve(v, n) (ad_vector_reserve((void**)&v), sizeof(*v), n)
+#define vector_reserve(v, n) (ad_vector_reserve((void**)&v, sizeof(*v), n))
 #define vector_push(v, value)                             \
   (ad_vector_reserve((void**)&v, sizeof(*v), 1)           \
        ? (v[_ad_vector_header(v)->len++] = (value), true) \
