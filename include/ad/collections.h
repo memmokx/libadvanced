@@ -11,7 +11,7 @@ typedef struct {
 } vector_header;
 
 #define _ad_vector_header(v) ((vector_header*)(v) - 1)
-#define _ad_vector_null_trap(v) (__builtin_trap(), *(typeof(v))0)
+#define _ad_vector_null_trap(v) (__builtin_trap(), *(volatile typeof(v))0)
 
 void* ad_vector_new(usize elem_size, usize capacity);
 bool ad_vector_reserve(void** header, usize elem_size, usize additional);
