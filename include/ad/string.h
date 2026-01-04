@@ -7,6 +7,7 @@ usize ad_strlen(const char* str);
 char* ad_strdup(const char* str);
 char* ad_strcpy(char* dest, const char* src);
 int ad_strcmp(const char* a, const char* b);
+int ad_strncmp(const char* a, const char* b, usize n);
 
 typedef struct {
   char* ptr;

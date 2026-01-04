@@ -8,11 +8,13 @@ INCLUDE = -Iinclude
 LIBAD_USE_LIBC ?= 0
 
 MEMORY_SRC 		= memcpy memmove memset calloc
-STRING_SRC 		= string strlen strcmp strcpy strchr strdup
+STRING_SRC 		= string strlen strcmp strcpy strchr strdup strncmp
 COLLECTIONS_SRC = vector
+IO_SRC = puts
 
 SRC = $(addprefix src/memory/, $(addsuffix .c, $(MEMORY_SRC))) \
 	  $(addprefix src/string/, $(addsuffix .c, $(STRING_SRC))) \
+	  $(addprefix src/io/, $(addsuffix .c, $(IO_SRC))) \
 	  $(addprefix src/collections/, $(addsuffix .c, $(COLLECTIONS_SRC)))
 
 OBJ = $(SRC:.c=.o)
@@ -66,4 +68,4 @@ fclean: clean
 re : fclean all
 
 
-.PHONY: re all fclean clean format 
+.PHONY: re all fclean clean format
