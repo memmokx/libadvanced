@@ -10,5 +10,5 @@ void ad_dputs(int fd, const char* str) {
   while (str[i])
     i++;
 
-  write(fd, str, i);
+  (void)write(fd, str, i);
 }
