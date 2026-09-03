@@ -1,5 +1,8 @@
 #include <ad/string.h>
+
+#ifdef INTERNAL_LIBAD_USE_LIBC
 #include <string.h>
+#endif
 
 int ad_strcmp(const char* a, const char* b) {
 #ifdef INTERNAL_LIBAD_USE_LIBC

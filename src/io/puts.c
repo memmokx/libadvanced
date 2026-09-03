@@ -1,5 +1,4 @@
 #include <ad/io.h>
-#include <stdio.h>
 
 void ad_puts(const char* str) {
   ad_dputs(STDOUT_FILENO, str);

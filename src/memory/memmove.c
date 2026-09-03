@@ -12,7 +12,7 @@ void* ad_memmove(void* dst, const void* src, usize n) {
   u8* d = dst;
 
   if (src < dst) {
-    for (int64_t i = (int64_t)n - 1; i >= 0; i--)
+    for (i64 i = (i64)n - 1; i >= 0; i--)
       d[i] = s[i];
     return dst;
   }
