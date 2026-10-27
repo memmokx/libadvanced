@@ -4,7 +4,7 @@
 #include "defines.h"
 #include <unistd.h>
 
-void ad_dputs(int fd, const char *str);
+int ad_dputs(int fd, const char *str);
 void ad_puts(const char *str);
 
 #endif
